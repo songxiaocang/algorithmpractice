@@ -56,11 +56,11 @@ public class T8_NextNodeInBinaryTrees {
         root.left.right = new TreeNode(5);
         root.left.right.father = root.left;
 
-        System.out.println(nextNode(root) == null?  null:nextNode(root).val);
-        System.out.println(nextNode(root.left) == null?  null:nextNode(root.left).val);
-        System.out.println(nextNode(root.right) ==  null?  null:nextNode(root.right).val );
-        System.out.println(nextNode(root.left.left) == null?  null:nextNode(root.left.left).val);
-        System.out.println(nextNode(root.left.right) == null? null:nextNode(root.left.right).val);
+        System.out.println(nextNode(root) == null?  null:nextNode(root).val);   //3
+        System.out.println(nextNode(root.left) == null?  null:nextNode(root.left).val); //5
+        System.out.println(nextNode(root.right) ==  null?  null:nextNode(root.right).val ); // null
+        System.out.println(nextNode(root.left.left) == null?  null:nextNode(root.left.left).val); //2
+        System.out.println(nextNode(root.left.right) == null? null:nextNode(root.left.right).val); //1
     }
 
 }
