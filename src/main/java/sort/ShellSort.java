@@ -3,7 +3,7 @@ package sort;
 /**
  * @Author: Songxc
  * @Date: 0:54 2019/4/27
- * @Description:  希尔排序
+ * @Description:  希尔排序 时间复杂度：最坏：O(n2) 最好O(n) 平均0(n1.3)  空间复杂度：0(1)
  */
 public class ShellSort {
     public static void shellSort(int[] array) {

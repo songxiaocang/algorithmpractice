@@ -3,8 +3,8 @@ package sort;
 /**
  * @Author: Songxc
  * @Date: 3:10 2019/4/27
- * @Description: 推排序
- * 思路： 建堆和堆调整的过程
+ * @Description: 推排序  时间复杂度：最坏：O(nlogn) 最好O(nlogn) 平均0(nlogn)  空间复杂度：0(1)
+ * 思路： 建堆、堆调整、堆重排序的过程
  */
 public class HeapSort {
     public static void heapSort(int[] a){

@@ -3,7 +3,9 @@ package sort;
 /**
  * @Author: Songxc
  * @Date: 23:48 2019/4/25
- * @Description: 归并排序
+ * @Description: 归并排序  时间复杂度：最坏：O(nlogn) 最好O(nlogn) 平均0(nlogn)  空间复杂度：0(n)
+ *  思路：
+ *      两路归并到新的序列中
  */
 public class MergeSort {
     public static void mergeSort(int[] a, int low, int high){

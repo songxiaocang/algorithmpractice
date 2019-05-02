@@ -3,7 +3,7 @@ package sort;
 /**
  * @Author: Songxc
  * @Date: 23:38 2019/4/25
- * @Description: 快速排序
+ * @Description: 快速排序 时间复杂度：最坏：O(n2) 最好O(nlogn) 平均0(nlogn)  空间复杂度：0(nlogn)
  */
 public class QuickSort {
     public static void quickSort(int[] a,int low,int high){
