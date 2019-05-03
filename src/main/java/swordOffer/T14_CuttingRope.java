@@ -11,6 +11,11 @@ package swordOffer;
  *  找出动态转移方程：f(n) = max(f(i) * f(n-i))
  */
 public class T14_CuttingRope {
+    /**
+     * 解法1：动态规划：时间复杂度：O(N2)
+     * @param length
+     * @return
+     */
     public static int cuttingRope(int length){
         if (length < 2){
             return 0;
@@ -40,7 +45,32 @@ public class T14_CuttingRope {
         return dp[length];
     }
 
+
+    /**
+     * 贪婪算法：时间复杂度0(1)
+     * 切成尽可能多的3分段，然后剩余为4的时候，划分为2分段，该方法可降低时间复杂度，但是需要数学公式验证
+     * @param length
+     * @return
+     */
+    public static int cuttingRope2(int length){
+        if (length < 2){
+            return 0;
+        }else if(length == 2){
+            return 1;
+        }else if(length == 3){
+            return 2;
+        }
+
+        int term3 = length / 3;
+        if(length - term3 * 3 == 1){
+            --term3;
+        }
+        int term2 = (length - term3 * 3)/2;
+        return (int) (Math.pow(3,term3) * Math.pow(2,term2));
+    }
+
     public static void main(String[] args) {
         System.out.println(cuttingRope(6));
+        System.out.println(cuttingRope2(6));
     }
 }
