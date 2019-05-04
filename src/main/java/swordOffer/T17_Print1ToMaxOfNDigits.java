@@ -6,7 +6,7 @@ package swordOffer;
  * @Description: 打印n位长度的整数
  *  思路：
  *   使用字符串模拟加法
- *   注意：加一判断（做到0(1)复杂度） 打印设置
+ *   注意：需要考虑大数问题   加一判断（做到0(1)复杂度） 打印设置
  */
 public class T17_Print1ToMaxOfNDigits {
     public static void print1ToMaxOfNDigits(int n){
