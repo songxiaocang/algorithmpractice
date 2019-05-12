@@ -25,7 +25,11 @@ public class T20_IsNumeric {
                  if(index==str.length()-1){
                      return true;
                  }
-                 index = scanInteger(str,index+1);
+                 if (str.charAt(index)=='.' && (str.charAt(index+1)=='e' ||str.charAt(index+1)=='E')){
+                     index = scanInteger(str, index+2);
+                 }else{
+                     index = scanInteger(str,index+1);
+                 }
                  if (index == -1) {
                      return false;
                  }
@@ -85,6 +89,6 @@ public class T20_IsNumeric {
 
 
     public static void main(String[] args){
-        System.out.println(isNumeric("6.1e6"));
+        System.out.println(isNumeric("6.02e"));
     }
 }
