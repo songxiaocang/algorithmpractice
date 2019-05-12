@@ -90,5 +90,6 @@ public class T20_IsNumeric {
 
     public static void main(String[] args){
         System.out.println(isNumeric("6.02e"));
+        System.out.println(isNumeric("6.2.3"));
     }
 }
