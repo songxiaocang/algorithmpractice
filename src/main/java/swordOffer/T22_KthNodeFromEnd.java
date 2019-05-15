@@ -8,6 +8,7 @@ import util.ListNode;
  * @Description: 链表中倒数第k个节点
  * 思路：
  *   注意边界条件和无效输入，采用两个指针先后前进，第一个指针需要先前进K-1步
+ *   时间复杂度：0(N)
  */
 public class T22_KthNodeFromEnd {
     public static ListNode<Integer> kthNodeFromEnd(ListNode head, int k){
