@@ -15,6 +15,9 @@ import java.util.Queue;
 public class T32_PrintBinaryTreeFromTopToBottom {
     //链表
     public static void printBinaryTree(TreeNode<Integer> root){
+        if(root == null){
+            return;
+        }
         Queue<TreeNode<Integer>> queue = new LinkedList<>();
         queue.offer(root);
         while(!queue.isEmpty()){
