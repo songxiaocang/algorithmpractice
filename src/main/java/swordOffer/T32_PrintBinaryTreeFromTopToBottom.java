@@ -8,7 +8,7 @@ import java.util.Queue;
 /**
  * @Author: Songxc
  * @Date: 20:42 2019/5/26
- * @Description: 从上到下打印二叉树（之字形）
+ * @Description: 从上到下打印二叉树
  *  思路：
  *   层序遍历，可以使用链表实现，也可以使用双栈实现，下面仅贴出链表实现。
  */
