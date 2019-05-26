@@ -12,7 +12,7 @@ import java.util.Stack;
  * 总结下，stack1负责插入，stack2负责弹出，如果stack2为空了，将stack1的元素依次弹出并存放到stack2中，之后对stack2进行弹出操作。
  *
  */
-public class T9_MyQueue<T> {
+public class T09_MyQueue<T> {
     private Stack<T> stack1 = new Stack<>();
     private Stack<T> stack2 = new Stack<>();
 
@@ -34,7 +34,7 @@ public class T9_MyQueue<T> {
     }
 
     public static void main(String[] args){
-        T9_MyQueue<Object> myQueue = new T9_MyQueue<>();
+        T09_MyQueue<Object> myQueue = new T09_MyQueue<>();
         myQueue.offer(1);
         myQueue.offer(2);
         myQueue.offer(3);

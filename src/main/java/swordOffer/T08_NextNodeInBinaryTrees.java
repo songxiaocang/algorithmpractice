@@ -15,7 +15,7 @@ import util.TreeNode;
  * （2.3）如果输入节点是他父节点的右孩子，那就需要将输入节点的父节点作为新的当前节点，返回到（2）,判断新的当前节点与他自身父节点的关系,比如5->1
  *
  */
-public class T8_NextNodeInBinaryTrees {
+public class T08_NextNodeInBinaryTrees {
     public static TreeNode nextNode(TreeNode node){
         if (node == null){
             return null;

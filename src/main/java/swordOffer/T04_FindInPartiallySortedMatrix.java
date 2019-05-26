@@ -8,7 +8,7 @@ package swordOffer;
  *  思路：建议从右上角作为起始点(左下角也行)，不建议从左上角或者右下角作为七十点
  *      从右上角出发，逐步筛选匹配的过程
  */
-public class T4_FindInPartiallySortedMatrix {
+public class T04_FindInPartiallySortedMatrix {
     public static boolean findInPartiallySortedMatrix(int[][] data,int target){
         if(data==null ||data.length==0 || data[0].length==0)
             return false;

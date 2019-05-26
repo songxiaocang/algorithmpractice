@@ -6,7 +6,7 @@ package swordOffer;
  * @Description: 替换空格为%20
  * 思路：数组扩容，从后往前复制
  */
-public class T5_ReplaceSpaces {
+public class T05_ReplaceSpaces {
     //由于java的字符数组没有结束符，所以需要多传入个原始长度
     //先计算好替换后的位置，从后向前替换，时间复杂度o(n)
     public static void replaceBlank(char[] data,int length){

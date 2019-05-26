@@ -7,7 +7,7 @@ import java.util.Stack;
  * @Date: 1:27 2019/4/26
  * @Description: 从尾到头打印链表
  */
-public class T6_P58_PrintListInReversedOrder {
+public class T06_P58_PrintListInReversedOrder {
      public static class ListNode<T>{
          private T val;
          private ListNode<T> next;

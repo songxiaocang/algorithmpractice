@@ -8,7 +8,7 @@ import java.util.*;
  * @Description: 二叉树 先序、中序、后序遍历（递归与非递归版本），层次遍历
  *  二叉树 查询某个
  */
-public class T6_2_TravesalOfBinaryTree<E extends Comparable<E>>{
+public class T06_2_TravesalOfBinaryTree<E extends Comparable<E>>{
     public static class Node<E>{
         public E val;
         public Node left,right;
@@ -23,7 +23,7 @@ public class T6_2_TravesalOfBinaryTree<E extends Comparable<E>>{
     private Node root;
     private int size;
 
-    public T6_2_TravesalOfBinaryTree(){
+    public T06_2_TravesalOfBinaryTree(){
         root = null;
         size = 0;
     }
@@ -218,7 +218,7 @@ public class T6_2_TravesalOfBinaryTree<E extends Comparable<E>>{
         System.out.println("后根遍历：");
         postOrder(root);
 
-        T6_2_TravesalOfBinaryTree travesal = new T6_2_TravesalOfBinaryTree();
+        T06_2_TravesalOfBinaryTree travesal = new T06_2_TravesalOfBinaryTree();
         travesal.root = root;
         System.out.println("先根非递归遍历：");
         List list = travesal.preOrderRecursively();

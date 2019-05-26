@@ -7,7 +7,7 @@ import util.Node;
  * @Date: 1:35 2019/4/30
  * @Description:
  */
-public class T7_ConstractBinaryTree {
+public class T07_ConstractBinaryTree {
 
     public static Node construct(int[] preOrder,int[] inOrder){
         if (preOrder == null || inOrder == null || preOrder.length == 0 || inOrder.length == 0){
