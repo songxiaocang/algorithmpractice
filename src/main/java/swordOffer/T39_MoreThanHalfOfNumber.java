@@ -25,7 +25,9 @@ public class T39_MoreThanHalfOfNumber {
                 index = partition(data, left, index-1);
             }
         }
-
+        if (!checkMoreThanHalf(data, data[k])){
+            return null;
+        }
         return data[k];
     }
 
@@ -50,6 +52,19 @@ public class T39_MoreThanHalfOfNumber {
         return left;
     }
 
+    //校验一下是否超过数组长度的一半
+    public static boolean checkMoreThanHalf(int[] data, int target){
+        int count = 0;
+        for(int i=0;i<data.length;i++){
+            if(data[i] == target){
+                count++;
+            }
+        }
+        if(count <= data.length/2){
+            return false;
+        }
+        return true;
+    }
     //数组特点
     public static Integer solution2(int[] data){
         if(data == null || data.length == 0){
@@ -67,13 +82,17 @@ public class T39_MoreThanHalfOfNumber {
             }
         }
 
+        if(!checkMoreThanHalf(data, value)){
+            return null;
+        }
         return value;
     }
 
 
     public static void main(String[] args) {
         int[] data = {1,3,4,5,2,2,2,2,2};
+        int[] data2 = {1,3,4,5,2,2};
         System.out.println(solution1(data));
-        System.out.println(solution2(data));
+        System.out.println(solution2(data2));
     }
 }
