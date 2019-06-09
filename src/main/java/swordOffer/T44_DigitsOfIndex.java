@@ -9,7 +9,7 @@ package swordOffer;
  *   该序列有0-9 10-99 100-999这些一次递增的k位数相互拼接而成。
  *   需要找出第N位对应几位数，及该几位数中哪一个数字和具体的哪一位。
  */
-public class T45_DigitsOfIndex {
+public class T44_DigitsOfIndex {
     public static int digitOfIndex(int index){
         if (index < 0){
             return -1;
