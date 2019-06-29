@@ -1,5 +1,6 @@
 package swordOffer;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -29,7 +30,7 @@ public class T59_MaxInSlidingWindow {
         }
 
         int[] result = new int[data.length - size + 1];
-        Deque<Integer> deque = new LinkedList<>();
+        Deque<Integer> deque = new ArrayDeque<>();
         for (int i = 0; i < size; i++) {
             while (!deque.isEmpty() && data[i] >= data[deque.getLast()]) {
                 deque.removeLast();
