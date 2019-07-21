@@ -14,7 +14,7 @@ package leetcode;
  * 链接：https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii
  * <p>
  * 思路：
- * 二分查找算法
+ * 二分查找算法  时间复杂度为0(logN)
  */
 public class T81_searchIndex {
     public boolean search(int[] nums, int target) {
