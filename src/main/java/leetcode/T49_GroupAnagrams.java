@@ -31,7 +31,7 @@ import java.util.*;
  * 2）按计数分类
  */
 public class T49_GroupAnagrams {
-    //方法1 排序字符串作为key  时间复杂度为O(nlogk) 空间复杂度为O(nk)
+    //方法1 排序字符串作为key  时间复杂度为O(nklogk) 空间复杂度为O(nk)
     public List<List<String>> groupAnagrams(String[] strs) {
         if (strs == null || strs.length <= 0) {
             return new ArrayList<>();
