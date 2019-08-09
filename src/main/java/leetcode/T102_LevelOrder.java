@@ -37,7 +37,7 @@ import java.util.Queue;
  * 队列实现
  *
  *  时间复杂度：0（n），每个节点被运算一次
- *  空间复杂度：0（n），爆出输出的list中包含n个节点的值
+ *  空间复杂度：0（n），保存输出的list中包含n个节点的值
  *
  */
 public class T102_LevelOrder {
