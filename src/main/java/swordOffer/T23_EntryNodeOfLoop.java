@@ -59,6 +59,16 @@ public class T23_EntryNodeOfLoop {
         }
 
         return null;
+
+        //获取相遇节点方法2：
+//        while(pSlow != pFast){
+//            if(pFast == null || pFast.next == null){
+//                return null;
+//            }
+//            pSlow = pSlow.next;
+//            pFast = pFast.next.next;
+//        }
+//        return pSlow;
     }
 
     public static void main(String[] args) {
