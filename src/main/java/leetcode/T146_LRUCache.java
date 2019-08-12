@@ -17,6 +17,19 @@ import java.util.Map;
  *
  * 你是否可以在 O(1) 时间复杂度内完成这两种操作？
  *
+ * 示例：
+ * LRUCache cache = new LRUCache( 2 );
+ *
+ * cache.put(1,1);
+ * cache.put(2,2);
+ * cache.get(1);       // 返回  1
+ * cache.put(3,3);    // 该操作会使得密钥 2 作废
+ * cache.get(2);       // 返回 -1 (未找到)
+ * cache.put(4,4);    // 该操作会使得密钥 1 作废
+ * cache.get(1);       // 返回 -1 (未找到)
+ * cache.get(3);       // 返回  3
+ * cache.get(4);       // 返回  4
+ *
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/lru-cache
  *
