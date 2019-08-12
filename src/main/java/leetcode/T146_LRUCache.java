@@ -1,6 +1,6 @@
 package leetcode;
 
-import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -43,7 +43,7 @@ import java.util.Map;
  */
 public class T146_LRUCache {
     //哈希表+双向链表
-    private Map<Integer, LinkedNode> cache = new HashMap<>();
+    private Hashtable<Integer, LinkedNode> cache = new Hashtable<>();
     private int size;
     private int capacity;
     private LinkedNode head, tail;
