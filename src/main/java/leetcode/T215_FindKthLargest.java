@@ -28,8 +28,8 @@ import java.util.Queue;
  *  可以参靠解答
  *   https://leetcode-cn.com/problems/kth-largest-element-in-an-array/solution/shu-zu-zhong-de-di-kge-zui-da-yuan-su-by-leetcode/
  *
- * 时间复杂度 : 平均情况 O(N){O}(N)O(N)，最坏情况 O(N2){O}(N^2)O(N2)。
- * 空间复杂度 : O(1){O}(1)O(1)。
+ * 时间复杂度 : 平均情况 O(N)，最坏情况 O(N2)。
+ * 空间复杂度 : O(1)。
  *
  */
 public class T215_FindKthLargest {
