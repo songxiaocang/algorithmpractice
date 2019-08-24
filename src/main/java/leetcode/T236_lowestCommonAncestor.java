@@ -46,7 +46,7 @@ import java.util.*;
  * 时间复杂度：O(N)，其中 N 是二叉树中的节点数。在最坏的情况下，我们可能会访问二叉树的所有节点。这种方法的优点是可以减少回溯。只要找到两个节点，我们就返回。
  * 空间复杂度：O(N)，在最坏的情况下，堆栈使用的空间是 N 且斜二叉树的高度可能是 N。
  */
-public class T235_lowestCommonAncestor {
+public class T236_lowestCommonAncestor {
     /**
      * 迭代：使用父指针
      * @param root
