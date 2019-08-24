@@ -8,7 +8,7 @@ import java.util.Queue;
  * @Date: 0:50 2019/5/2
  * @Description:
  */
-public class TreeNode<T> {
+public class TreeNode<T extends Comparable> {
     public T val;
     public TreeNode left,right,father;
 
