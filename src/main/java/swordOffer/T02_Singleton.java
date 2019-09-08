@@ -5,7 +5,7 @@ package swordOffer;
  * @Date: 18:40 2019/9/8
  * @Description:  七种单例模式
  */
-public class T2_Singleton {
+public class T02_Singleton {
     //版本一：饿汉式
     //特点：线程安全；在类初始化执行到静态属性时就分配了资源，有资源浪费问题；
    static class Singleton1{
