@@ -53,9 +53,9 @@ public class T460_LFUCache {
             this.val = -1;
         }
 
-        public ListNode(int val, int key) {
-            this.val = val;
+        public ListNode(int key, int val) {
             this.key = key;
+            this.val = val;
             cnt = 0;
         }
     }
@@ -104,7 +104,7 @@ public class T460_LFUCache {
             return;
         }
         if (cache.size() == capacity) removeFirst();
-        node = new ListNode(value, key);
+        node = new ListNode(key, value);
         ListNode tail = tailMap.get(node.cnt);
         node.prev = tail;
         node.next = tail.next;
