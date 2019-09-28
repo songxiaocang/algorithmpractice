@@ -39,14 +39,30 @@ import java.util.Map;
  *    维护一个双向链表，链表右边既是最不经常使用的节点
  */
 public class T460_LFUCache {
-    private Map<Integer, ListNode> map;//存储key对应的value所在的节点
+    private Map<Integer, ListNode> cache;//存储key对应的value所在的节点
     private Map<Integer, ListNode> tailMap;//存储每个区间的最左边
     private int capacity;
     private ListNode head;//链表最右边
 
+    //一个简单的链表
+    private class ListNode {
+        int val, cnt, key;//cnt代表使用次数
+        ListNode left, right;
+
+        public ListNode() {
+            this.val = -1;
+        }
+
+        public ListNode(int val, int key) {
+            this.val = val;
+            this.key = key;
+            cnt = 0;
+        }
+    }
+
     public T460_LFUCache(int capacity) {
         this.capacity = capacity;
-        this.map = new HashMap<>();
+        this.cache = new HashMap<>();
         this.tailMap = new HashMap<>();
         head = new ListNode();
         head.left = new ListNode();
@@ -55,8 +71,8 @@ public class T460_LFUCache {
     }
 
     public int get(int key) {
-        if (capacity <= 0 || !map.containsKey(key)) return -1;
-        ListNode cur = map.get(key);
+        if (capacity <= 0 || !cache.containsKey(key)) return -1;
+        ListNode cur = cache.get(key);
         use(cur);
         return cur.val;
     }
@@ -81,48 +97,34 @@ public class T460_LFUCache {
 
     public void put(int key, int value) {
         if (capacity == 0) return;
-        ListNode node = map.getOrDefault(key, null);
+        ListNode node = cache.getOrDefault(key, null);
         if (node != null) {
             node.val = value;
             use(node);
             return;
         }
-        if (map.size() == capacity) removeFirslt();
+        if (cache.size() == capacity) removeFirst();
         node = new ListNode(value, key);
         ListNode tail = tailMap.get(node.cnt);
         node.left = tail;
         node.right = tail.right;
         node.right.left = node;
         tail.right = node;
-        map.put(key, node);
+        cache.put(key, node);
     }
 
     //移除最不常用的节点
-    private void removeFirslt() {
+    private void removeFirst() {
         ListNode cur = head;
         while (cur.val == -1) {
             cur = cur.left;
         }
         cur.left.right = cur.right;
         cur.right.left = cur.left;
-        map.remove(cur.key);
+        cache.remove(cur.key);
     }
 
-    //一个简单的链表
-    private class ListNode {
-        int val, cnt, key;//cnt代表使用次数
-        ListNode left, right;
 
-        public ListNode() {
-            this.val = -1;
-        }
-
-        public ListNode(int val, int key) {
-            this.val = val;
-            this.key = key;
-            cnt = 0;
-        }
-    }
 
 
 }
