@@ -47,7 +47,7 @@ public class T460_LFUCache {
     //一个简单的链表
     private class ListNode {
         int val, cnt, key;//cnt代表使用次数
-        ListNode left, right;
+        ListNode prev, next;
 
         public ListNode() {
             this.val = -1;
@@ -65,9 +65,9 @@ public class T460_LFUCache {
         this.cache = new HashMap<>();
         this.tailMap = new HashMap<>();
         head = new ListNode();
-        head.left = new ListNode();
-        head.left.right = head;
-        tailMap.put(0, head.left);
+        head.prev = new ListNode();
+        head.prev.next = head;
+        tailMap.put(0, head.prev);
     }
 
     public int get(int key) {
@@ -80,19 +80,19 @@ public class T460_LFUCache {
     //使用节点，移动该节点在链表的位置
     private void use(ListNode cur) {
         cur.cnt++;
-        if (cur.left != null) cur.left.right = cur.right;
-        if (cur.right != null) cur.right.left = cur.left;
+        if (cur.prev != null) cur.prev.next = cur.next;
+        if (cur.next != null) cur.next.prev = cur.prev;
         if (!tailMap.containsKey(cur.cnt)) {
             ListNode node = new ListNode();
-            node.right = tailMap.get(cur.cnt - 1);
-            node.right.left = node;
+            node.next = tailMap.get(cur.cnt - 1);
+            node.next.prev = node;
             tailMap.put(cur.cnt, node);
         }
         ListNode tail = tailMap.get(cur.cnt);
-        cur.left = tail;
-        cur.right = tail.right;
-        cur.right.left = cur;
-        tail.right = cur;
+        cur.prev = tail;
+        cur.next = tail.next;
+        tail.next.prev = cur;
+        tail.next = cur;
     }
 
     public void put(int key, int value) {
@@ -106,10 +106,10 @@ public class T460_LFUCache {
         if (cache.size() == capacity) removeFirst();
         node = new ListNode(value, key);
         ListNode tail = tailMap.get(node.cnt);
-        node.left = tail;
-        node.right = tail.right;
-        node.right.left = node;
-        tail.right = node;
+        node.prev = tail;
+        node.next = tail.next;
+        tail.next.prev = node;
+        tail.next = node;
         cache.put(key, node);
     }
 
@@ -117,10 +117,10 @@ public class T460_LFUCache {
     private void removeFirst() {
         ListNode cur = head;
         while (cur.val == -1) {
-            cur = cur.left;
+            cur = cur.prev;
         }
-        cur.left.right = cur.right;
-        cur.right.left = cur.left;
+        cur.prev.next = cur.next;
+        cur.next.prev = cur.prev;
         cache.remove(cur.key);
     }
 
