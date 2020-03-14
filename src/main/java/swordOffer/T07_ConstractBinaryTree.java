@@ -5,7 +5,7 @@ import util.Node;
 /**
  * @Author: Songxc
  * @Date: 1:35 2019/4/30
- * @Description:
+ * @Description: 重建二叉树
  */
 public class T07_ConstractBinaryTree {
 
