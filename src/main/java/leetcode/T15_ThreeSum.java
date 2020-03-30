@@ -31,7 +31,7 @@ public class T15_ThreeSum {
                             j++;
                         }
                         while((j<k) && nums[k]==nums[k+1]){
-                            k++;
+                            k--;
                         }
                     }else if(nums[j]+nums[k]>-nums[i]){
                         k--;
