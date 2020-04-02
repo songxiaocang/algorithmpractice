@@ -11,7 +11,27 @@ import util.ListNode;
  *  注意特殊情况：当被删除节点在链表头部或者尾部的时候，需要修改head或prev。
  */
 public class T18_2_DeleteDuplicatedNode {
-    public static ListNode<Integer> deleteDuplicatedNode(ListNode<Integer> head){
+
+    /**
+     * 推荐解法
+     * @param head
+     * @return
+     */
+    public static ListNode<Integer> deleteDuplicatedNode(ListNode<Integer> head) {
+        ListNode cur = head;
+        while (cur != null) {
+            if (cur.next != null && cur.val == cur.next.val) {
+                cur.next = cur.next.next;
+            } else {
+                cur = cur.next;
+            }
+        }
+
+        return head;
+    }
+
+
+    public static ListNode<Integer> deleteDuplicatedNode2(ListNode<Integer> head){
         if(head == null || head.next == null){
             return head;
         }
