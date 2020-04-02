@@ -30,6 +30,24 @@ public class T24_ReverseList {
         }
     }
 
+
+    public static ListNode reverseList2(ListNode head){
+        if(head == null || head.next == null){
+            return head;
+        }
+
+        ListNode prev = null;
+        ListNode cur = head;
+        while(cur != null){
+            ListNode temp = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = temp;
+        }
+
+        return prev;
+    }
+
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
