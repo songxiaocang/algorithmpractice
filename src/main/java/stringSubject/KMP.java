@@ -91,7 +91,7 @@ public class KMP {
     }
 
     public static void main(String[] args) {
-        int matchCount = kmp("BBCABCDABABCD ABCDABDE", "ABCDABD");
+        int matchCount = kmp("BBCABCDABABCDABCDABDE", "ABCDABD");
         System.out.println(matchCount);
     }
 }
