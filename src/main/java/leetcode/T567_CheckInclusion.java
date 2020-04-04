@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.*;
+
 /**
  * @Author: Songxc
  * @Date: 17:39 2020/4/2
@@ -71,12 +73,84 @@ public class T567_CheckInclusion {
         return count == 26;
     }
 
+    //查找index 无重复元素
+    public static int findindex(char[] arr,String s){
+        if(arr.length>s.length())
+            return -1;
+        Set<Character> sets=new HashSet<>();
+        Set<Character> curWindow=new HashSet<>();
+        int curStart=0;
+        for(char c:arr) sets.add(c);
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            if(sets.contains(c)&&!curWindow.contains(c)){
+                curWindow.add(c);
+                if(curWindow.size()==arr.length)
+                    return curStart;
+            }else if(sets.contains(c)&&curWindow.contains(c)){
+                while(s.charAt(curStart)!=c){
+                    curWindow.remove(s.charAt(curStart));
+                    curStart++;
+                }
+                curStart++;
+
+            }else{
+                curStart=i+1;
+                curWindow.clear();
+            }
+
+        }
+        return -1;
+    }
+
+    //查找index 有重复元素
+    public static int findindexForList(char[] arr,String s){
+        if(arr.length>s.length())
+            return -1;
+        List<Character> list=new ArrayList<>();
+        List<Character> curWindow=new ArrayList<>();
+        int curStart=0;
+        for(char c:arr) list.add(c);
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            if(list.contains(c)){
+                curWindow.add(c);
+                Iterator<Character> iterator = list.iterator();
+                int deleteCount = 0;
+                while (iterator.hasNext()) {
+                    char partStr = iterator.next();
+                    if (partStr == c && deleteCount == 0) {
+                        deleteCount++;
+                        iterator.remove();
+                    }
+                }
+                if(curWindow.size()==arr.length)
+                    return curStart;
+            }else{
+                list.clear();
+                for (char a : arr) {
+                    list.add(a);
+                }
+                curStart=i+1;
+                curWindow.clear();
+            }
+
+        }
+        return -1;
+    }
+
 
     public static void main(String[] args) {
         boolean result = checkInclusion("ab", "eidbaooo");
-        boolean result2 = checkInclusion("ab", "eidboaoo");
         System.out.println(result);
-        System.out.println(result2);
+        System.out.println("-----------");
+        int index = findindexForList(new char[]{'a', 'b'}, "eidbaooo");
+        int index2 = findindex(new char[]{'a', 'b', 'c', 'd'}, "tbcacbdata");
+        int index3 = findindexForList(new char[]{'a', 'd', 'a', 't'}, "tbcacbdata");
+        System.out.println(index);
+        System.out.println(index2);
+        System.out.println(index3);
+
     }
 
 }
